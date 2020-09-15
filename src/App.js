@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import PageTitle from './components/PageTitle';
+import TacosAdmin from './components/TacosAdmin';
 
 export default class App  extends Component{
   render(){
     return(
-      <PageTitle text='Taco Js' color='purple'/>
+      <TacosAdmin/>
     );
   }
 }
