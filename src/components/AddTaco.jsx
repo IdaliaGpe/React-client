@@ -23,13 +23,12 @@ export default class AddTaco extends Component{
     catchSpacyness = event => this.setState({pica: event.target.value});
     //catchSpacyness = event => console.log(event.target.value);
 
-
     render() {
         return (
             <Fragment>
                 <h3>Agregar taco:</h3>
-                    <div className='form-group' style={{width: '50%'}}>
-                        <span>Nombre del taco:</span>
+                    <div className='form-group' style={{width: '50%', background: 'yellow'}}>
+                    <span>Nombre del Taco:</span>
                         <input onChange={this.catchName} className='form-control' type="text" name="" id="taco-name" placeholder='eje: tu taco'/>
                         <span>Cantidad:</span>
                         <input onChange={this.catchQuantity} className='form-control' type="number" name="" id="taco-quantity" style={{width: '20%'}}/>
