@@ -6,7 +6,7 @@ export default class AddTaco extends Component{
     state = {
         name: '',
         quantity: 0,
-        pica: ''
+        pica: 'si'
     }
 
     sendTaco = () =>{
@@ -15,20 +15,19 @@ export default class AddTaco extends Component{
 
         axios.post('http://localhost:5000', {name: name, quantity: quantity, pica: pica})
         .then(response => response.data)
-        .then(data => window.location.reload());
+        .then(data => console.log(data));
     }
 
     catchName = event => this.setState({name: event.target.value});
     catchQuantity = event => this.setState({quantity: event.target.value});
     catchSpacyness = event => this.setState({pica: event.target.value});
-    //catchSpacyness = event => console.log(event.target.value);
 
     render() {
         return (
             <Fragment>
                 <h3>Agregar taco:</h3>
-                    <div className='form-group' style={{width: '50%', background: 'yellow'}}>
-                    <span>Nombre del Taco:</span>
+                    <div className='form-group' style={{width: '50%'}}>
+                        <span>Nombre del taco:</span>
                         <input onChange={this.catchName} className='form-control' type="text" name="" id="taco-name" placeholder='eje: tu taco'/>
                         <span>Cantidad:</span>
                         <input onChange={this.catchQuantity} className='form-control' type="number" name="" id="taco-quantity" style={{width: '20%'}}/>
