@@ -12,7 +12,7 @@ export default class TacosAdmin extends Component{
     render() {
         return (
             <Container>
-                <PageTitle text='Tacos Js' color='purple' fontSize={8}/>
+                <PageTitle text='Tacos Js' color='purple' fontSize={10}/>
                 <Routes/>
             </Container>
         );
