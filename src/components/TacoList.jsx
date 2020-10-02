@@ -31,26 +31,18 @@ export default class TacoList extends Component{
             this.setState({tacos: tacos.map(taco =>{
                 return <li className={`list-group-item`} key={taco.id} onClick={()=>this.tacoClick(taco.id)}
                 onMouseOver={this.onSelect} onMouseOut={this.onDeselect}>
-                            Nombre del taco: {taco.name}
+                            Nombre del Taco: {taco.name}
                         </li>
             })})
         });
-
         this.watchCode();
     }, 1000);
 
     render() {
 
-        const {name, quantity, pica} = this.state.currentTaco;
         return (
             <Fragment>
-                <div className="card" style={{width: '18rem'}}>
-                    <div className="card-body">
-                        <h5 className="card-title">{name}</h5>
-                        <p className="card-text">La orden viene con {quantity} tacos y {pica} pica.</p>
-                    </div>
-                </div>
-                <ul style = {{
+                <ul style={{
                     cursor: 'pointer'
                 }} className='list-group'>
                     {this.state.tacos}
